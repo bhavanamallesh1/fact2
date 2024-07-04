@@ -1,38 +1,195 @@
-.App {
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-control {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-list {
+  border-top: 1px solid #ccc;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-item {
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.user-item.open {
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.user-header:hover {
+  background-color: #e9e9e9;
 }
 
-@keyframes App-logo-spin {
+.user-header img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.user-header .user-name {
+  flex-grow: 1;
+}
+
+.user-details {
+  padding: 10px;
+  animation: fadeIn 0.5s ease;
+}
+
+.view-state .mb-2,
+.edit-state .form-group {
+  margin-bottom: 10px;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.actions .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.actions .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.actions .btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.actions .btn-danger:hover {
+  background-color: #c82333;
+}
+
+.actions .btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.actions .btn-success:hover {
+  background-color: #218838;
+}
+
+.actions .btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.actions .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+@media (max-width: 576px) {
+  .user-header img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .actions button {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .user-item {
+  border-color: #444;
+}
+
+.dark-mode .user-header {
+  background-color: #444;
+}
+
+.dark-mode .user-header:hover {
+  background-color: #555;
+}
+
+.dark-mode .user-item.open {
+  background-color: #444;
+}
+
+.dark-mode .form-control {
+  background-color: #555;
+  color: #fff;
+}
+
+.dark-mode .btn-primary {
+  background-color: #007bff;
+}
+
+.dark-mode .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.dark-mode .btn-danger {
+  background-color: #dc3545;
+}
+
+.dark-mode .btn-danger:hover {
+  background-color: #c82333;
+}
+
+.dark-mode .btn-success {
+  background-color: #28a745;
+}
+
+.dark-mode .btn-success:hover {
+  background-color: #218838;
+}
+
+.dark-mode .btn-secondary {
+  background-color: #6c757d;
+}
+
+.dark-mode .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.dark-mode-input {
+  background-color: #555;
+  color: #fff;
 }
